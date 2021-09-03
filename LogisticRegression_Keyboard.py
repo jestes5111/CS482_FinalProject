@@ -14,10 +14,12 @@ data = file.to_numpy()
 X_train, X_test, y_train, y_test = train_test_split(data[:, 0:-2], data[:, -1])
 
 # create and train the model with no cross validation and l2 penalty
-lr_l2 = LogisticRegression(penalty = 'l2', max_iter = 1000).fit(X_train, y_train)
+lr_l2 = LogisticRegression(penalty = 'l2', max_iter = 1000)
+lr_l2.fit(X_train, y_train)
 
 # create and train the model with no cross validation and no penalty
-lr_none = LogisticRegression(penalty = 'none', max_iter = 1000).fit(X_train, y_train)
+lr_none = LogisticRegression(penalty = 'none', max_iter = 1000)
+lr_none.fit(X_train, y_train)
 
 # save the train and test scores
 l2_train_score = lr_l2.score(X_train, y_train)

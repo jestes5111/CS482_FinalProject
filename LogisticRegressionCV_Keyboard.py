@@ -14,12 +14,13 @@ data = file.to_numpy()
 X_train, X_test, y_train, y_test = train_test_split(data[:, 0:-2], data[:, -1])
 
 # create and train the model with cross validation
-lr = LogisticRegressionCV(cv = 5, max_iter = 1000).fit(X_train, y_train)
+lr_cv = LogisticRegressionCV(cv = 5, max_iter = 1000)
+lr_cv.fit(X_train, y_train)
 
-# save the train and test with cross valiation scores
-train_score = lr.score(X_train, y_train)
-test_score = lr.score(X_test, y_test)
+# save the train and test scores
+cv_train_score = lr_cv.score(X_train, y_train)
+cv_test_score = lr_cv.score(X_test, y_test)
 
 # print the scores
-print("Training score:", train_score)
-print("Testing with cross validation score:", test_score)
+print("Training score:", cv_train_score)
+print("Testing with cross validation score:", cv_test_score)
