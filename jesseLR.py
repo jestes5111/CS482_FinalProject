@@ -22,7 +22,7 @@ test_result = []
 X_train, X_test, y_train, y_test = train_test_split(data[:, 0:-2], data[:, -1])
 print("data split completed")
 # create and train the model
-lr = LogisticRegression().fit(X_train, y_train)
+lr = LogisticRegression(max_iter=1000).fit(X_train, y_train)
 print("LR fit completed")
 train_score = lr.score(X_train, y_train)
 test_score = lr.score(X_test, y_test)
