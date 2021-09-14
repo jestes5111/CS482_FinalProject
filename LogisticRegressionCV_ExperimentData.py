@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegressionCV
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MinMaxScaler
 
 # open the file
@@ -23,12 +23,12 @@ X = scaler.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
 
 # create and train the model with cross validation
-regressor = LogisticRegressionCV(cv = 2, max_iter = 2000).fit(X_train, y_train)
+regressor = LogisticRegression(max_iter = 2000).fit(X_train, y_train)
 
 # save the train and test with cross valiation scores
 train_score = regressor.score(X_train, y_train)
-test_score = regressor.score(X_test, y_test)
+test_score = cross_val_score(regressor, X, y, cv = 5)
 
 # print the scores
 print("Training score:", train_score)
-print("Testing with cross validation score:", test_score)
+print("Testing score:", np.mean(test_score))
