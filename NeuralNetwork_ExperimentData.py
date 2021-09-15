@@ -25,5 +25,5 @@ train_score = classifier.score(X_train, y_train)
 test_score = classifier.score(X_test, y_test)
 
 # print the scores
-print("Training score:", train_score)
-print("Testing score:", test_score)
+print("Training score:", train_scores)
+print("Testing score:", test_scores)
