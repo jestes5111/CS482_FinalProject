@@ -17,7 +17,7 @@ y = data[:, -1]
 # use an 80/20 split for training and testing data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
 
-# create and train the neural network classifier
+# create and train the support vector machine classifier
 classifier = SVC().fit(X_train, y_train)
 
 # save the train and test scores
