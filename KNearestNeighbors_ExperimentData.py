@@ -15,7 +15,7 @@ X = data[:, :-2]
 y = data[:, -1]
 
 # use an 80/20 split for training and testing data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # create lists to save results for every number of neighbors
 results_train = []
