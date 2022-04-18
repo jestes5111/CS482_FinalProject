@@ -15,10 +15,11 @@ X = data[:, :-2]
 y = data[:, -1]
 
 # use an 80/20 split for training and testing data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # create and train the neural network classifier
-classifier = MLPClassifier(max_iter = 5000).fit(X_train, y_train)
+classifier = MLPClassifier(max_iter=5000)
+classifier.fit(X_train, y_train)
 
 # save the train and test scores
 train_score = classifier.score(X_train, y_train)

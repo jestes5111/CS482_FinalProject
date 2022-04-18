@@ -18,7 +18,8 @@ y = data[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
 
 # create and train the support vector machine classifier
-classifier = SVC().fit(X_train, y_train)
+classifier = SVC()
+classifier.fit(X_train, y_train)
 
 # save the train and test scores
 train_score = classifier.score(X_train, y_train)

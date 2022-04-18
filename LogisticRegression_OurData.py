@@ -15,14 +15,15 @@ X = data[:, :-2]
 y = data[:, -1]
 
 # use an 80/20 split for training and testing data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # create and train the model with no cross validation
-regressor = LogisticRegression(max_iter = 1000).fit(X_train, y_train)
+classifier = LogisticRegression(max_iter=1000)
+classifier.fit(X_train, y_train)
 
 # save the train and test scores
-train_score = regressor.score(X_train, y_train)
-test_score = regressor.score(X_test, y_test)
+train_score = classifier.score(X_train, y_train)
+test_score = classifier.score(X_test, y_test)
 
 # print the scores
 print("Training score:", train_score)
