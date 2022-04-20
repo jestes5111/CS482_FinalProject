@@ -5,10 +5,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 # open the file
-file = pd.read_csv('collected_data.csv')
+input_file = pd.read_csv('collected_data.csv')
 
 # save the data as a np array
-data = file.to_numpy()
+data = input_file.to_numpy()
 
 # slice the data for easier reading
 X = data[:, :-2]
@@ -22,9 +22,9 @@ classifier = LogisticRegression(max_iter=1000)
 classifier.fit(X_train, y_train)
 
 # save the train and test scores
-train_score = classifier.score(X_train, y_train)
-test_score = classifier.score(X_test, y_test)
+score_train = classifier.score(X_train, y_train)
+score_test = classifier.score(X_test, y_test)
 
 # print the scores
-print('Training score:', train_score)
-print('Testing score:', test_score)
+print('Training score:', score_train)
+print('Testing score:', score_test)

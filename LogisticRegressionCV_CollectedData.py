@@ -5,10 +5,10 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
 
 # open the file
-file = pd.read_csv('collected_data.csv')
+input_file = pd.read_csv('collected_data.csv')
 
 # save the data as a np array
-data = file.to_numpy()
+data = input_file.to_numpy()
 
 # slice the data for easier reading
 X = data[:, :-2]
@@ -22,9 +22,9 @@ classifier = LogisticRegression(penalty='none', cv=5, max_iter=2000)
 classifier.fit(X_train, y_train)
 
 # save the train and test with cross valiation scores
-train_score = cross_val_score(classifier), X_train, y_train)
-test_score = cross_val_score(classifier, X_test, y_test)
+score_train = cross_val_score(classifier), X_train, y_train)
+score_test = cross_val_score(classifier, X_test, y_test)
 
 # print the scores
-print('Training score:', np.mean(train_score))
-print('Testing score:', np.mean(test_score))
+print('Training score:', np.mean(score_train))
+print('Testing score:', np.mean(score_test))

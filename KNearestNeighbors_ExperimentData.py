@@ -5,10 +5,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 # open the file
-file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
+input_file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
 
 # save the data as a np array
-data = file.to_numpy()
+data = input_file.to_numpy()
 
 # slice the data for easier reading
 X = data[:, :-2]
