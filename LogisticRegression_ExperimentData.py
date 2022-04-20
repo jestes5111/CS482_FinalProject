@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 # open the file
-file = pd.read_csv("DSL-StrongPasswordData-modified.csv")
+file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
 
 # save the data as a np array
 data = file.to_numpy()
@@ -32,7 +32,7 @@ train_score_no_penalty = classifier_no_penalty.score(X_train, y_train)
 test_score_no_penalty = classifier_no_penalty.score(X_test, y_test)
 
 # print the scores
-print("L2 Penalty Training score:", train_score_l2_penalty)
-print("L2 Penalty Testing score:", test_score_l2_penalty)
-print("No Penalty Training score:", train_score_no_penalty)
-print("No Penalty Testing score:", test_score_no_penalty)
+print('L2 Penalty Training score:', train_score_l2_penalty)
+print('L2 Penalty Testing score:', test_score_l2_penalty)
+print('No Penalty Training score:', train_score_no_penalty)
+print('No Penalty Testing score:', test_score_no_penalty)

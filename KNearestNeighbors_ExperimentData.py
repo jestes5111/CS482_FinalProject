@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 # open the file
-file = pd.read_csv("DSL-StrongPasswordData-modified.csv")
+file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
 
 # save the data as a np array
 data = file.to_numpy()
@@ -36,7 +36,7 @@ for i in range(1, 200):
     results_test.append(score_test)
 
     # print the test score
-    #print("Test score for k =", i, ":", score_test)
+    #print('Test score for k =', i, ':', score_test)
 
 # plot the accuracy for both scores
 plt.plot(results_test, label='test accuracy')

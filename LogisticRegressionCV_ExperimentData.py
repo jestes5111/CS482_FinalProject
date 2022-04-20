@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
 
 # open the file
-file = pd.read_csv("DSL-StrongPasswordData-modified.csv")
+file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
 
 # save the data as a np array
 data = file.to_numpy()
@@ -26,5 +26,5 @@ train_score = cross_val_score(classifier, X_train, y_train)
 test_score = cross_val_score(classifier, X_test, y_test)
 
 # print the scores
-print("Training score:", np.mean(train_score))
-print("Testing score:", np.mean(test_score))
+print('Training score:', np.mean(train_score))
+print('Testing score:', np.mean(test_score))

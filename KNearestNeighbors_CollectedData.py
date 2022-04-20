@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 # open the file
-file = pd.read_csv("ourdata.csv")
+file = pd.read_csv('collected_data.csv')
 
 # save the data as a np array
 data = file.to_numpy()
@@ -34,9 +34,6 @@ for i in range(1, 200):
     # append the results to the respective list
     results_train.append(score_train)
     results_test.append(score_test)
-
-    # print the test score
-    #print("Test score for k =", i, ":", score_test)
 
 # plot the accuracy for both scores
 plt.plot(results_test, label='test accuracy')

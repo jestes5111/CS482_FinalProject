@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
 # open the file
-file = pd.read_csv("DSL-StrongPasswordData-modified.csv")
+file = pd.read_csv('DSL-StrongPasswordData-modified.csv')
 
 # save the data as a np array
 data = file.to_numpy()
@@ -26,5 +26,5 @@ train_score = classifier.score(X_train, y_train)
 test_score = classifier.score(X_test, y_test)
 
 # print the scores
-print("Training score:", train_score)
-print("Testing score:", test_score)
+print('Training score:', train_score)
+print('Testing score:', test_score)
