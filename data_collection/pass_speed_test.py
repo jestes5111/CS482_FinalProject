@@ -9,10 +9,13 @@ passcode_list = ['.', 't', 'i', 'e', '5', 'shift_r', 'R', 'o', 'a', 'n', 'l']
 keys_being_pressed = []
 char_index = 0
 previous_end_press_time = -1
-row_to_write = [". hold time", ". to t time", "t hold time", "t to i time", "i hold time", 
-    "i to e time", "e hold time", "e to 5 time", "5 hold time", "5 to Lshift time", "Lshift hold time", 
-    "Lshift to r time", "r hold time", "r to o time", "o hold time", "o to a time", "a hold time", 
-    "a to n time", "n hold time", "n to l time", "l hold time"]
+row_to_write = [
+    ". hold time", ". to t time", "t hold time", "t to i time", "i hold time", 
+    "i to e time", "e hold time", "e to 5 time", "5 hold time", 
+    "5 to Lshift time", "Lshift hold time", "Lshift to r time", "r hold time", 
+    "r to o time", "o hold time", "o to a time", "a hold time", "a to n time", 
+    "n hold time", "n to l time", "l hold time"
+]
 run_continue_flag = True
 
 def on_key_release(key):
